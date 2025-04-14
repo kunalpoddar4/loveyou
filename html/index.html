@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Do You Love Me?</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      color: #ff3399;
+      font-size: 3em;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    #yesBtn {
+      background-color: #ff66b2;
+      color: white;
+    }
+    #noBtn {
+      background-color: #fff;
+      color: #ff66b2;
+      border: 2px solid #ff66b2;
+      position: absolute;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Do You Love Me? 💖</h1>
+  <button id="yesBtn" onclick="goToLove()">Yes</button>
+  <button id="noBtn" onclick="moveNo()">No</button>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="romantic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function goToLove() {
+      window.location.href = "love.html";
+    }
+
+    function moveNo() {
+      const noBtn = document.getElementById('noBtn');
+      const maxX = window.innerWidth - 100;
+      const maxY = window.innerHeight - 50;
+      const randX = Math.floor(Math.random() * maxX);
+      const randY = Math.floor(Math.random() * maxY);
+      noBtn.style.left = randX + "px";
+      noBtn.style.top = randY + "px";
+    }
+  </script>
+</body>
+</html>
